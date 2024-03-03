@@ -1,8 +1,7 @@
 from classroom.asignatura import Asignatura
 
 class Grupo:
-    grado = None
-
+    grado = "Grado 12"
     def __init__(self, grupo="grupo predeterminado", asignaturas=[], estudiantes=[]):
         self._grupo = grupo
         self._asignaturas = asignaturas
@@ -13,9 +12,10 @@ class Grupo:
         for x in kwargs.values():
             self._asignaturas.append(Asignatura(x))
 
-    def agregarAlumno(self, alumno, lista=[]):
+    def agregarAlumno(self, alumno, lista1=[]):
+        lista = []
         lista.append(alumno)
-        self.listadoAlumnos = self.listadoAlumnos + lista
+        self.listadoAlumnos = self.listadoAlumnos + lista1 + lista
 
     def __str__(self):
         return "Grupo de estudiantes: "+self._grupo
